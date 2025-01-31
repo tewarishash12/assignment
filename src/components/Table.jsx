@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 function Table() {
-    const gridSize = 500; // Set your desired grid size
+    const gridSize = 500; 
     const numbers = Array.from({ length: gridSize }, (_, i) => i + 1);
-    const columns = 10; // Number of columns (adjust to your design)
+    const columns = 10;
     const lastColumnIndex = columns - 1;
 
-    const [direction, setDirection] = useState(1); // 1 means moving forward, -1 means moving backward
+    const [direction, setDirection] = useState(1);
     const [currentPosition, setCurrentPosition] = useState(0);
 
     useEffect(() => {
