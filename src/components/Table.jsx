@@ -26,6 +26,8 @@ function generateRedSequence(start, isFirstRound , limit) {
         let col = 8
         for (let i = col; i >= 0; i--) {
             start = start + diff;
+            if(start<=0 || start>limit)
+                continue;
             redSequence.add(start);
             if((diff===11 && start%10===0) || (diff===9 && start%10===1))
                 break;
@@ -55,7 +57,7 @@ function Table() {
                 setStart(-1);
             } else if (start <= -10 && !isFirstRound) {
                 setIsFirstRound(true);
-                setStart(-10)
+                setStart(-8)
                 // setRedSequence(new Set(generateRedSequence(start, isFirstRound , gridSize)));
             } else {
                 setStart((prev) => isFirstRound ? prev + 1 : prev - 1)

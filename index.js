@@ -6,6 +6,8 @@ function generateRedSequence(start , limit) {
         let col = 8
         for (let i = col; i >= 0; i--) {
             start = start + diff;
+            if(start<=0 || start>limit)
+                continue;
             redSequence.add(start);
             if((diff===11 && start%10===0) || (diff===9 && start%10===1))
                 break;
@@ -21,7 +23,7 @@ let isFirstRound = true;
 
 
 function executeLoop() {
-    let start = isFirstRound ? -9 : -2;
+    let start = isFirstRound ? -8 : -1;
     if (isFirstRound) {
         let i = start;
 
@@ -56,9 +58,6 @@ function executeLoop() {
 }
 
 executeLoop();
-
-
-
 
 
 // start: -1 diff-1: 11 diff-2: 9 col-8
