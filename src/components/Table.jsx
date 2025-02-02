@@ -57,7 +57,7 @@ function Table() {
                 setStart(-1);
             } else if (start <= -10 && !isFirstRound) {
                 setIsFirstRound(true);
-                setStart(-8)
+                setStart(-7)
             } else {
                 setStart((prev) => isFirstRound ? prev + 1 : prev - 1)
             }
