@@ -58,7 +58,6 @@ function Table() {
             } else if (start <= -10 && !isFirstRound) {
                 setIsFirstRound(true);
                 setStart(-8)
-                // setRedSequence(new Set(generateRedSequence(start, isFirstRound , gridSize)));
             } else {
                 setStart((prev) => isFirstRound ? prev + 1 : prev - 1)
             }
@@ -66,48 +65,6 @@ function Table() {
 
         return () => clearInterval(interval);
     }, [start,isFirstRound])
-
-    // useEffect(() => {
-    //     function executeLoop() {
-    //         let start = isFirstRound ? -9 : -2;
-    //         if (isFirstRound) {
-    //             let i = start;
-
-    //             function runFirstLoop() {
-    //                 if (i < 0) {
-    //                     setRedSequence(generateRedSequence(i, gridSize))
-    //                     // console.log("First Loop" + i + " sequence " + [...generateRedSequence(i, 500)]);
-    //                     setI((num) => num + 1)
-    //                     // i++;
-    //                     setTimeout(runFirstLoop, 100);
-    //                 } else {
-    //                     setIsFirstRound(false)
-    //                     executeLoop();
-    //                 }
-    //             }
-
-    //             runFirstLoop();
-    //         } else {
-    //             let i = start;
-    //             function runSecondLoop() {
-    //                 if (i >= -10) {
-    //                     setRedSequence(generateRedSequence(i, gridSize));
-    //                     // console.log("Second Loop" + i + " sequence " + [...generateRedSequence(i, 250)]);
-    //                     setI((num) => num - 1);
-    //                     // i--;
-    //                     setTimeout(runSecondLoop, 100);
-    //                 } else {
-    //                     setIsFirstRound(true);
-    //                     executeLoop();
-    //                 }
-    //             }
-
-    //             runSecondLoop();
-    //         }
-    //     }
-
-    //     executeLoop();
-    // }, [isFirstRound])
 
     return (
         <div className="grid grid-cols-10 gap-2 p-4 w-fit mx-auto">
